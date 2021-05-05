@@ -8,11 +8,12 @@ nav{
     width: 96%;
     height: 10vh;
     position: fixed;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2); */
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 2%;
+    transition: box-shadow 1s;
 }
 
 nav #logo{
@@ -124,7 +125,7 @@ nav ul li .btn:hover{
 #content{
     background-color: whitesmoke;
     min-height: 100vh;
-    padding: 20vh 10vw 10vh;
+    padding: 10vh 0vw 0vh;
 }
 
 footer{
