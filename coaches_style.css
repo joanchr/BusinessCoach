@@ -1,16 +1,16 @@
 #content{
     padding-bottom: 20vh;
 }
-.category-container{
+#category-container{
     margin: 4% 5%;
     /* background-color: pink; */
 }   
-.category-container .category-title{
+#category-container .category-title{
     /* background-color: teal; */
     display: flex;
     justify-content: center;
 }
-.category-container .card-container-container{
+#category-container .card-container-container{
     /* background-color: blue; */
     width: 100%;
     display: flex;
@@ -18,14 +18,14 @@
     justify-content: center;
 }
 
-.category-container .card-container-container button{
+#category-container .card-container-container .btn{
     cursor: pointer;
     display: flex;
     font-size: large;
     border: 0px;
     background-color: transparent;
 }
-.category-container .card-container-container .card-container{
+#category-container .card-container-container .card-container{
     /* background-color: thistle; */
     display: flex;
     flex-wrap: wrap;
@@ -63,12 +63,12 @@
     flex-direction: column;
     justify-content: center;
 }
-.card .card-detail h4{
+.card .card-detail .card-heading{
     margin: 2%;
     text-overflow: ellipsis;
     overflow: hidden;
 }
-.card .card-detail p{
+.card .card-detail .card-text{
     margin: 2%;
     text-overflow: ellipsis;
     overflow: hidden;
