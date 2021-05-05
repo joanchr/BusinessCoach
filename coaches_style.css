@@ -1,0 +1,75 @@
+#content{
+    padding-bottom: 20vh;
+}
+.category-container{
+    margin: 4% 5%;
+    /* background-color: pink; */
+}   
+.category-container .category-title{
+    /* background-color: teal; */
+    display: flex;
+    justify-content: center;
+}
+.category-container .card-container-container{
+    /* background-color: blue; */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.category-container .card-container-container button{
+    cursor: pointer;
+    display: flex;
+    font-size: large;
+    border: 0px;
+    background-color: transparent;
+}
+.category-container .card-container-container .card-container{
+    /* background-color: thistle; */
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.card{
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.2);
+
+    display: flex;
+    align-items: center;
+
+    margin: 5px;
+    width: 23vw;
+    height: 14vw;
+    min-width: 240px;
+    min-height: 141px;
+}
+.card .profile-photo-container{
+    background-color: whitesmoke;
+    border-radius: 8px;
+
+    width: 40%;
+    height: 80%;
+    margin: 15px;
+}
+.card .card-detail{
+    width: 50%;
+    height: 80%;
+    /* background-color: turquoise; */
+    white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.card .card-detail h4{
+    margin: 2%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.card .card-detail p{
+    margin: 2%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}

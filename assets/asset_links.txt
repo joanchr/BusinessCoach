@@ -9,3 +9,9 @@ https://iconify.design/icon-sets/?query=youtube
 
 tiktok logo
 https://iconify.design/icon-sets/?query=tiktok
+
+left logo
+https://iconify.design/icon-sets/?query=left
+
+right logo
+https://iconify.design/icon-sets/?query=right
