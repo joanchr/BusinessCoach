@@ -62,17 +62,40 @@ else{
 
 $(window).on('resize', function(event){
     var windowWidth = $(window).width();
-    categoryPagingIndex = [0,0,0];
     if(windowWidth < 633){
-        itemsPerPage = 1;
-        seed();
+        if(itemsPerPage != 1){
+            var oldItemsPerPage = itemsPerPage; // 3
+            itemsPerPage = 1;
+            for (let i = 0; i < categoryPagingIndex.length; i++) {
+                var categoryIndex = categoryPagingIndex[i]; // 1
+                var currentElement = categoryIndex * oldItemsPerPage; // 3
+                categoryPagingIndex[i] = Math.floor(currentElement / itemsPerPage);
+            }
+            seed();
+        }
     }else if(windowWidth < 906){
-        itemsPerPage = 2;
-        seed();
+        if(itemsPerPage != 2){
+            var oldItemsPerPage = itemsPerPage; // 3
+            itemsPerPage = 2;
+            for (let i = 0; i < categoryPagingIndex.length; i++) {
+                var categoryIndex = categoryPagingIndex[i]; // 1
+                var currentElement = categoryIndex * oldItemsPerPage; // 3
+                categoryPagingIndex[i] = Math.floor(currentElement / itemsPerPage);
+            }
+            seed();
+        }
     }
     else{
-        itemsPerPage = 3;
-        seed();
+        if(itemsPerPage != 3){
+            var oldItemsPerPage = itemsPerPage; // 3
+            itemsPerPage = 3;
+            for (let i = 0; i < categoryPagingIndex.length; i++) {
+                var categoryIndex = categoryPagingIndex[i]; // 1
+                var currentElement = categoryIndex * oldItemsPerPage; // 3
+                categoryPagingIndex[i] = Math.floor(currentElement / itemsPerPage);
+            }
+            seed();
+        }
     }
 });
 
@@ -106,7 +129,8 @@ function seed() {
         cardContainer.id = 'cardContainer' + i;
     
         //cards
-        for (let j = 0; j < itemsPerPage; j++) {
+        var startIndex = categoryPagingIndex[i] * itemsPerPage;
+        for (let j = startIndex ; j < startIndex + itemsPerPage; j++) {
             const coach = coaches[j];
             var card = document.createElement("div");
             card.classList.add("card");
