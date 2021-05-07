@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" href="master.css">
-    <link rel="stylesheet" href="seminars_style.css">
+    <link rel="stylesheet" href="faqs_style.css">
 
     <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script defer src="master.js"></script>
@@ -28,8 +28,22 @@
             <li><a href="faqs.html">FAQs</a></li>
         </ul>
     </nav>
-    <div id="content">
-        
+    <div id="faqs">
+        <h1 class="title">FREQUENTLY ASKED QUESTIONS</h1>
+        <form class="search-container" action="faqs.html" method="get">
+            <input type="text" name="search-faqs" id="search-faqs-input" placeholder="search a question here">
+            <button type="submit" id="submit-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none"><path d="M21 21l-4.486-4.494M19 10.5a8.5 8.5 0 1 1-17 0a8.5 8.5 0 0 1 17 0z" stroke="#626262" stroke-width="2" stroke-linecap="round"/></g><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>
+            </button>
+        </form>
+        <div class="faqs-container">
+            <p>Q: Where can I register?</p>
+            <p>A: You can register by clicking the <b>register now</b> button on top of the screen or click <a href="register.html">here</a>.</p>
+        </div>
+        <div class="faqs-container">
+            <p>Q: Can I register as a coach?</p>
+            <p>A: To ensure our quality of coaches, we only select qualified and experienced coaches. If you want to apply to be a coach, you can contact us directly at <a href="http://mail.google.com/" target="_blank">apply@businesscoach.com</a>.</p>
+        </div>
     </div>
     <footer>
         <a href="http://mail.google.com/" target="_blank">

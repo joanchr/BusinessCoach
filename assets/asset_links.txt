@@ -15,3 +15,6 @@ https://iconify.design/icon-sets/?query=left
 
 right logo
 https://iconify.design/icon-sets/?query=right
+
+search logo
+https://iconify.design/icon-sets/?query=search

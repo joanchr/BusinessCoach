@@ -15,7 +15,7 @@ var data = [
         {name:"John Doe9", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business"},
         {name:"John Doe10", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business"},
         {name:"John Doe11", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business"},
-        {name:"John Doe12", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business"}
+        {name:"John Doe12", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business"},
     ],
     [
         {name:"John Doe1", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business"},
@@ -116,12 +116,14 @@ function seed() {
         cardContainerContainer.classList.add("card-container-container");
     
         //left button
-        var leftBtn = document.createElement("button");
-        leftBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none"><path d="M15 4l-8 8l8 8" stroke="#626262" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>';
-        leftBtn.classList.add("btn");
-        leftBtn.id = 'leftBtn' + i;
-        leftBtn.onclick = function() {previous(i)};
-        cardContainerContainer.appendChild(leftBtn);
+        if(coaches.length > itemsPerPage){
+            var leftBtn = document.createElement("button");
+            leftBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none"><path d="M15 4l-8 8l8 8" stroke="#626262" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>';
+            leftBtn.classList.add("btn");
+            leftBtn.id = 'leftBtn' + i;
+            leftBtn.onclick = function() {previous(i)};
+            cardContainerContainer.appendChild(leftBtn);
+        }
     
         //card container
         var cardContainer = document.createElement("div");
@@ -131,57 +133,63 @@ function seed() {
         //cards
         var startIndex = categoryPagingIndex[i] * itemsPerPage;
         for (let j = startIndex ; j < startIndex + itemsPerPage; j++) {
-            const coach = coaches[j];
-            var card = document.createElement("div");
-            card.classList.add("card");
-            //photo
-            var photo = document.createElement("div");
-            photo.classList.add("profile-photo-container");
-            card.appendChild(photo);
-            //detail
-            var cardDetail = document.createElement("div");
-            cardDetail.classList.add("card-detail");
-            //detail fields
-            var fullName = document.createElement("h4");
-            fullName.innerText = coach.name;
-            fullName.classList.add("card-heading");
-            cardDetail.appendChild(fullName);
-    
-            var email = document.createElement("p");
-            email.innerText = coach.email;
-            email.classList.add("card-text");
-            cardDetail.appendChild(email);
-    
-            var phone = document.createElement("p");
-            phone.innerText = coach.phone;
-            phone.classList.add("card-text");
-            cardDetail.appendChild(phone);
-    
-            var rating = document.createElement("p");
-            rating.innerText = coach.rating;
-            rating.classList.add("card-text");
-            cardDetail.appendChild(rating);
-    
-            var exp = document.createElement("p");
-            exp.innerText = coach.experience;
-            exp.classList.add("card-text");
-            cardDetail.appendChild(exp);
-    
-            //append
-            card.appendChild(cardDetail);
-            cardContainer.appendChild(card);
+            if(j < coaches.length){
+                const coach = coaches[j];
+                var card = document.createElement("div");
+                card.classList.add("card");
+                //photo
+                var photo = document.createElement("div");
+                photo.classList.add("profile-photo-container");
+                card.appendChild(photo);
+                //detail
+                var cardDetail = document.createElement("div");
+                cardDetail.classList.add("card-detail");
+                //detail fields
+                var fullName = document.createElement("h4");
+                fullName.innerText = coach.name;
+                fullName.classList.add("card-heading");
+                cardDetail.appendChild(fullName);
+        
+                var email = document.createElement("p");
+                email.innerText = coach.email;
+                email.classList.add("card-text");
+                email.style.fontWeight = "bold";
+                cardDetail.appendChild(email);
+        
+                var phone = document.createElement("p");
+                phone.innerText = coach.phone;
+                phone.classList.add("card-text");
+                phone.style.fontWeight = "bold";
+                cardDetail.appendChild(phone);
+        
+                var rating = document.createElement("p");
+                rating.innerText = coach.rating;
+                rating.classList.add("card-text");
+                cardDetail.appendChild(rating);
+        
+                var exp = document.createElement("p");
+                exp.innerText = coach.experience;
+                exp.classList.add("card-text");
+                cardDetail.appendChild(exp);
+        
+                //append
+                card.appendChild(cardDetail);
+                cardContainer.appendChild(card);
+            }
         }
     
         //append card container to cardContainerContainer
         cardContainerContainer.appendChild(cardContainer);
     
         //right button
-        var rightBtn = document.createElement("button");
-        rightBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none"><path d="M8 4l8 8l-8 8" stroke="#626262" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>';
-        rightBtn.classList.add("btn");
-        rightBtn.id = 'rightBtn' + i;
-        rightBtn.onclick = function() {next(i)};
-        cardContainerContainer.appendChild(rightBtn);
+        if(coaches.length > itemsPerPage){
+            var rightBtn = document.createElement("button");
+            rightBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none"><path d="M8 4l8 8l-8 8" stroke="#626262" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g><rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)" /></svg>';
+            rightBtn.classList.add("btn");
+            rightBtn.id = 'rightBtn' + i;
+            rightBtn.onclick = function() {next(i)};
+            cardContainerContainer.appendChild(rightBtn);
+        }
     
         //append card container container
         container.appendChild(cardContainerContainer);
@@ -190,7 +198,7 @@ function seed() {
 
 function next(categoryId) {
     //calculate total page
-    var totalPage = data[categoryId].length / itemsPerPage; 
+    var totalPage = Math.floor(data[categoryId].length / itemsPerPage); 
     //12 / 3 = 4
     if(data[categoryId].length % itemsPerPage != 0) totalPage = totalPage + 1;
     //13 / 3 = 4 + 1 = 5
@@ -231,11 +239,13 @@ function next(categoryId) {
             var email = document.createElement("p");
             email.innerText = coach.email;
             email.classList.add("card-text");
+            email.style.fontWeight = "bold";
             cardDetail.appendChild(email);
 
             var phone = document.createElement("p");
             phone.innerText = coach.phone;
             phone.classList.add("card-text");
+            phone.style.fontWeight = "bold";
             cardDetail.appendChild(phone);
 
             var rating = document.createElement("p");
@@ -258,7 +268,7 @@ function next(categoryId) {
 
 function previous(categoryId) {
     //calculate total page
-    var totalPage = data[categoryId].length / itemsPerPage; 
+    var totalPage = Math.floor(data[categoryId].length / itemsPerPage); 
     //12 / 3 = 4
     if(data[categoryId].length % itemsPerPage != 0) totalPage = totalPage + 1;
     //13 / 3 = 4 + 1 = 5
@@ -300,11 +310,13 @@ function previous(categoryId) {
             var email = document.createElement("p");
             email.innerText = coach.email;
             email.classList.add("card-text");
+            email.style.fontWeight = "bold";
             cardDetail.appendChild(email);
 
             var phone = document.createElement("p");
             phone.innerText = coach.phone;
             phone.classList.add("card-text");
+            phone.style.fontWeight = "bold";
             cardDetail.appendChild(phone);
 
             var rating = document.createElement("p");
