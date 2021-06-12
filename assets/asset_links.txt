@@ -18,3 +18,6 @@ https://iconify.design/icon-sets/?query=right
 
 search logo
 https://iconify.design/icon-sets/?query=search
+
+mail logo
+https://iconify.design/icon-sets/?query=mail
