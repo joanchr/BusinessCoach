@@ -75,7 +75,7 @@ nav ul li .btn:hover{
     }
     nav #mobile-menu-icon{
         display: block;
-        font-size: 44px;
+        font-size: x-large;
         display: flex;
         align-items: center;
         margin-right: 4%;
@@ -99,7 +99,7 @@ nav ul li .btn:hover{
         padding: 0;
     }
     nav ul li a{
-        padding: 20px 7%;
+        padding: 4% 7%;
         width: 100%;
         border-radius: 0px;
     }
@@ -113,7 +113,7 @@ nav ul li .btn:hover{
         color: #adff2f;
     }
     nav ul li .btn{
-        padding: 20px 7%;
+        padding: 4% 7%;
         width: 100%;
         border-radius: 0px;
     }
