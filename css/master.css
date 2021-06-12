@@ -82,6 +82,9 @@ nav ul li .btn:hover{
         border: 0px;
         background-color: whitesmoke;
     }
+    nav #mobile-menu-icon:hover{
+        cursor: pointer;
+    }
     nav ul{
         display: none;
         flex-direction: column;
@@ -99,7 +102,7 @@ nav ul li .btn:hover{
         padding: 0;
     }
     nav ul li a{
-        padding: 4% 7%;
+        padding: 2% 4%;
         width: 100%;
         border-radius: 0px;
     }
@@ -113,7 +116,7 @@ nav ul li .btn:hover{
         color: #adff2f;
     }
     nav ul li .btn{
-        padding: 4% 7%;
+        padding: 2% 4%;
         width: 100%;
         border-radius: 0px;
     }
