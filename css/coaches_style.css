@@ -102,3 +102,24 @@
     text-overflow: ellipsis;
     overflow: hidden;
 }
+
+@media screen and (max-width: 768px) {
+    .category-title{
+        font-size: medium;
+    }
+    .card-heading{
+        font-size: small;
+    }
+    .card-text{
+        font-size: small;
+    }
+    .card{
+        box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.2);
+        margin: 1vw;
+        min-width: 180px;
+        min-height: 130px;
+    }
+    .search-container{
+        margin: 4% 15%;
+    }
+}
