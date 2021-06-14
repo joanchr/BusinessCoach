@@ -1,0 +1,17 @@
+.seminars{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10vh;
+    padding-bottom: 20vh;
+    font-size: large;
+    text-align: center;
+}
+
+
+@media screen and (max-width: 768px){
+    #seminars{
+        font-size: medium;
+    }
+}
