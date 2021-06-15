@@ -10,6 +10,8 @@
 
     <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script defer src="js/master.js"></script>
+    <script defer src="js/data.js"></script>
+    <script defer src="js/register.js"></script>
 
     <title>Register - Business Coach</title>
 </head>
@@ -29,7 +31,66 @@
         </ul>
     </nav>
     <div id="content">
-        
+        <div class="container">
+            <form class="form" action="" method="GET" onsubmit="event.preventDefault()">
+                
+                <!-- Select Coach Category -->
+                <label for="category">Coach Category</label>
+                <select name="category" id="category" onchange="seedCoachBasedOnCategory()">
+                    <option value="0">-- Any Coach Category --</option>
+                </select>
+
+                <!-- Select Coach -->
+                <label for="coach">Coach</label>
+                <select name="coach" id="coach" onchange="changeCoachDetail()">
+                    <option value="0">-- Any Coach --</option>
+                </select>
+
+                <div id="coach-container">
+                </div>
+                
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" placeholder="e.g. John Doe"> 
+                <p id="name-error-msg" class="error-message"></p>
+
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="e.g. johndoe@example.com">
+                <p id="email-error-msg" class="error-message"></p>
+
+                <label for="phone">Phone Number</label>
+                <input type="text" name="phone" id="phone" placeholder="e.g. 081234567890">
+                <p id="phone-error-msg" class="error-message"></p>
+
+
+                <label for="gender">Gender</label>
+                <div class="option">
+                    <div class="option">
+                        <input type="radio" name="gender" id="gender-male" value="male">
+                        <p>Male</p>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="gender" id="gender-female" value="female">
+                        <p>Female</p>
+                    </div>
+                </div>
+                <p id="gender-error-msg" class="error-message"></p>
+
+                <label for="birthdate">Birthdate</label>
+                <input type="date" name="birthdate" id="birthdate">
+                <p id="birthdate-error-msg" class="error-message"></p>
+
+                <label for="address">Address</label>
+                <textarea name="address" id="address" cols="30" rows="10" placeholder="e.g. 7th Avenue Lane"></textarea>
+                <p id="address-error-msg" class="error-message"></p>
+
+                <label for="notes">Additional Notes</label>
+                <textarea name="notes" id="notes" cols="30" rows="10" placeholder="e.g. just put outside house"></textarea>
+                
+                <div class="button-container">
+                    <button type="submit" onclick="validateAll()">SUBMIT</button>
+                </div>
+            </form>
+        </div>
     </div>
     <footer>
         <div class="links">
@@ -65,5 +126,13 @@
             </a>
         </div>
     </footer>
+
+    <!-- modal -->
+    <div class="modal-background" id="form-success-modal">
+        <div class="modal">
+            <svg onclick="closeFormSuccessModal()" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="#626262" d="M13.41 12l4.3-4.29a1 1 0 1 0-1.42-1.42L12 10.59l-4.29-4.3a1 1 0 0 0-1.42 1.42l4.3 4.29l-4.3 4.29a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0l4.29-4.3l4.29 4.3a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.42z"/></svg>
+            <p>Thank you for registering to Business Coach.</p>
+        </div>
+    </div>
 </body>
 </html>

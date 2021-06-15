@@ -132,9 +132,6 @@
 }
 
 /* modal */
-body{
-    overflow-y: hidden;
-}
 .modal-background{
     display: flex;
     position: fixed;
@@ -156,12 +153,28 @@ body{
     min-height: 80vh;
     top: 10vh;
 }
+.transparent-buffer{
+    height: 10vh;
+    background-color: rgba(0, 0, 0, 0.8);
+}
 .modal svg{
     float: right;
     font-size: x-large;
 }
 .modal svg:hover{
     cursor: pointer;
+}
+.modal p{
+    text-align: justify;
+    max-width: 100%;
+}
+.modal b{
+    font-size: x-large;
+    max-width: 100%;
+}
+.modal a{
+    max-width: 100%;
+    word-wrap: break-word
 }
 
 .modal .buffer{
@@ -186,15 +199,32 @@ body{
     display: flex;
     flex-direction: column;
     padding: 1%;
+    max-width: 100%;
 }
 .coaches-detail-row-long{
     display: flex;
     flex-direction: column;
     padding: 1% 2%;
+    max-width: 100%;
 }
 .rating{
     display: flex;
     flex-direction: row;
+}
+#coaches-detail-button{
+    color: black;
+    background-color: #adff2f;
+    border-radius: 10px;
+    padding: 10px 2%;
+    font-weight: bold;
+    margin: 5% 0;
+    border: 0px;
+    width: fit-content;
+}
+#coaches-detail-button:hover{
+    color: #adff2f;
+    background-color: black;
+    cursor: pointer;
 }
 
 /* additional media rule only, 1080px already applied in master.css */
@@ -202,5 +232,13 @@ body{
     .modal p{
         font-size: small;
         width: 90vw;
+    }
+    .modal b{
+        font-size: small;
+    }
+    .modal a{
+        font-size: small;
+        width: 90vw;
+        overflow: hidden;
     }
 }
