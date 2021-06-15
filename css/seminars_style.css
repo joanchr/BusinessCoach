@@ -5,13 +5,45 @@
     align-items: center;
     padding-top: 10vh;
     padding-bottom: 20vh;
+    padding-left: 1vw;
+    padding-right: 1vw;
     font-size: large;
     text-align: center;
 }
 
+.line-buffer{
+    width: 0px;
+    height: 2vh;
+    border: 1px solid black;
+    border-style: dashed;
+}
+.circle{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: black;
+}
+.container{
+    background-color: white;
+    width: 70vw;
+    padding: 1%;
+    border-radius: 5px;
+}
+.seminar-title{
+    font-size: large;
+}
+.seminar-detail{
+    font-size: medium;
+}
 
 @media screen and (max-width: 768px){
     #seminars{
         font-size: medium;
+    }
+    .container{
+        background-color: white;
+        width: 90vw;
+        padding: 1%;
+        border-radius: 5px;
     }
 }
