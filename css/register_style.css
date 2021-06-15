@@ -81,7 +81,13 @@
     align-items: center;
 }
 .form #coach-container .coach-image{
-    max-width: 100%;
+    max-width: 50%;
+}
+
+@media screen and (max-width: 768px){ 
+    .form #coach-container .coach-image{
+        max-width: 100%;
+    }    
 }
 
 @media screen and (max-width: 320px){ 

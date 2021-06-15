@@ -2,6 +2,10 @@ const container = document.getElementById("category-container");
 var itemsPerPage = 3;
 var categoryPagingIndex = [0,0,0];
 
+const fullStar = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 20 20"><path d="M10 1l3 6l6 .75l-4.12 4.62L16 19l-6-3l-6 3l1.13-6.63L1 7.75L7 7z" fill="#000000"/></svg>'
+const halfStar = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 20 20"><path d="M10 1L7 7l-6 .75l4.13 4.62L4 19l6-3l6 3l-1.12-6.63L19 7.75L13 7zm0 2.24l2.34 4.69l4.65.58l-3.18 3.56l.87 5.15L10 14.88V3.24z" fill="#000000"/></svg>'
+const emptyStar = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 20 20"><path d="M10 1L7 7l-6 .75l4.13 4.62L4 19l6-3l6 3l-1.12-6.63L19 7.75L13 7zm0 2.24l2.34 4.69l4.65.58l-3.18 3.56l.87 5.15L10 14.88l-4.68 2.34l.87-5.15l-3.18-3.56l4.65-.58z" fill="#000000"/></svg>' 
+
 var windowWidth = $(window).width();
 if(windowWidth < 633){
     itemsPerPage = 1;
@@ -118,9 +122,8 @@ function seed() {
                 phone.style.fontWeight = "bold";
                 cardDetail.appendChild(phone);
         
-                var rating = document.createElement("p");
-                rating.innerText = coach.rating;
-                rating.classList.add("card-text");
+                var rating = document.createElement("div");
+                generateStars(rating, coach.rating);
                 cardDetail.appendChild(rating);
         
                 var exp = document.createElement("p");
@@ -130,7 +133,7 @@ function seed() {
         
                 //append
                 card.appendChild(cardDetail);
-                card.onclick = function(){openCoachesModal(coach,i,j)};
+                card.onclick = function(){openCoachesModal(coach,i,coach.id)};
                 cardContainer.appendChild(card);
             }
         }
@@ -206,9 +209,8 @@ function next(categoryId) {
             phone.style.fontWeight = "bold";
             cardDetail.appendChild(phone);
 
-            var rating = document.createElement("p");
-            rating.innerText = coach.rating;
-            rating.classList.add("card-text");
+            var rating = document.createElement("div");
+            generateStars(rating, coach.rating);
             cardDetail.appendChild(rating);
 
             var exp = document.createElement("p");
@@ -218,7 +220,7 @@ function next(categoryId) {
 
             //append
             card.appendChild(cardDetail);
-            card.onclick = function(){openCoachesModal(coach)};
+            card.onclick = function(){openCoachesModal(coach,categoryId,coach.id)};
             cardContainer.appendChild(card);
         }
     }
@@ -279,9 +281,8 @@ function previous(categoryId) {
             phone.style.fontWeight = "bold";
             cardDetail.appendChild(phone);
 
-            var rating = document.createElement("p");
-            rating.innerText = coach.rating;
-            rating.classList.add("card-text");
+            var rating = document.createElement("div");
+            generateStars(rating, coach.rating);
             cardDetail.appendChild(rating);
 
             var exp = document.createElement("p");
@@ -291,7 +292,7 @@ function previous(categoryId) {
 
             //append
             card.appendChild(cardDetail);
-            card.onclick = function(){openCoachesModal(coach)};
+            card.onclick = function(){openCoachesModal(coach,categoryId,coach.id)};
             cardContainer.appendChild(card);
         }
     }
@@ -300,10 +301,6 @@ function previous(categoryId) {
 
 // Modal
 const formSuccessModal = document.getElementById("coaches-modal");
-const fullStar = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 20 20"><path d="M10 1l3 6l6 .75l-4.12 4.62L16 19l-6-3l-6 3l1.13-6.63L1 7.75L7 7z" fill="#000000"/></svg>'
-const halfStar = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 20 20"><path d="M10 1L7 7l-6 .75l4.13 4.62L4 19l6-3l6 3l-1.12-6.63L19 7.75L13 7zm0 2.24l2.34 4.69l4.65.58l-3.18 3.56l.87 5.15L10 14.88V3.24z" fill="#000000"/></svg>'
-const emptyStar = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 20 20"><path d="M10 1L7 7l-6 .75l4.13 4.62L4 19l6-3l6 3l-1.12-6.63L19 7.75L13 7zm0 2.24l2.34 4.69l4.65.58l-3.18 3.56l.87 5.15L10 14.88l-4.68 2.34l.87-5.15l-3.18-3.56l4.65-.58z" fill="#000000"/></svg>' 
-
 $('#coaches-modal').hide()
 
 function openCoachesModal(coach, categoryId, coachId) {
