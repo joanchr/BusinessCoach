@@ -74,6 +74,9 @@
     min-width: 240px;
     min-height: 141px;
 }
+.card:hover{
+    cursor: pointer;
+}
 .card .profile-photo-container{
     background-color: whitesmoke;
     border-radius: 8px;
@@ -81,6 +84,10 @@
     width: 40%;
     height: 80%;
     margin: 15px;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 .card .card-detail{
     width: 50%;
@@ -121,5 +128,79 @@
     }
     .search-container{
         margin: 4% 15%;
+    }
+}
+
+/* modal */
+body{
+    overflow-y: hidden;
+}
+.modal-background{
+    display: flex;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+}
+.modal{
+    background-color: white;
+    z-index: 200;
+    position: absolute;
+    width: 90%;
+    min-height: 80vh;
+    top: 10vh;
+}
+.modal svg{
+    float: right;
+    font-size: x-large;
+}
+.modal svg:hover{
+    cursor: pointer;
+}
+
+.modal .buffer{
+    padding: 0.5vh;
+}
+.modal .coaches-detail-container{
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+} 
+.coaches-detail-container img{
+    width: 20vw;
+
+}
+.coaches-detail-row{
+    display: flex;
+    flex-direction: row;
+    padding: 1%;
+    flex-wrap: wrap;
+}
+.coaches-detail-column{
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+}
+.coaches-detail-row-long{
+    display: flex;
+    flex-direction: column;
+    padding: 1% 2%;
+}
+.rating{
+    display: flex;
+    flex-direction: row;
+}
+
+/* additional media rule only, 1080px already applied in master.css */
+@media screen and (max-width: 320px){ 
+    .modal p{
+        font-size: small;
+        width: 90vw;
     }
 }

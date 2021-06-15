@@ -1,23 +1,52 @@
-menu logo
+Menu Icon
 https://iconify.design/icon-sets/?query=menu
 
-instagram logo
+Instagram Icon
 https://iconify.design/icon-sets/?query=instagram
 
-youtube logo
+Youtube Icon
 https://iconify.design/icon-sets/?query=youtube
 
-tiktok logo
+Tiktok Icon
 https://iconify.design/icon-sets/?query=tiktok
 
-left logo
+Left Icon
 https://iconify.design/icon-sets/?query=left
 
-right logo
+Right Icon
 https://iconify.design/icon-sets/?query=right
 
-search logo
+Search Icon
 https://iconify.design/icon-sets/?query=search
 
-mail logo
+Mail Icon
 https://iconify.design/icon-sets/?query=mail
+
+Close Icon
+https://iconify.design/icon-sets/?query=close
+
+Star Icon
+https://iconify.design/icon-sets/?query=star
+
+Amancio Ortega 
+https://en.wikipedia.org/wiki/Amancio_Ortega
+https://www.linkedin.com/in/amancio-ortega-3550121b3/
+
+Delphine Arnault
+https://en.wikipedia.org/wiki/Delphine_Arnault
+https://www.linkedin.com/in/delphine-arnault-b83a243a/
+https://r.lvmh-static.com/uploads/2019/01/delphine-arnault-cover-660x974.jpg
+
+Karl-Johan Persson
+https://en.wikipedia.org/wiki/Karl-Johan_Persson
+https://www.linkedin.com/company/h&m/
+https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.unicef.org%2Fsowc2011%2Fimages%2Fperspectives-karl_persson.jpg&imgrefurl=https%3A%2F%2Fwww.unicef.org%2Fsowc2011%2Fkarljohanpersson.php&tbnid=Ohq-oVBOl31CiM&vet=12ahUKEwjp_9Xd1ZjxAhWxt0sFHV5oCvIQMygKegUIARDJAQ..i&docid=5eB1mnoBrmNFGM&w=219&h=300&q=Karl-Johan%20Persson&hl=en-US&ved=2ahUKEwjp_9Xd1ZjxAhWxt0sFHV5oCvIQMygKegUIARDJAQ
+
+Chip Wilson
+https://en.wikipedia.org/wiki/Chip_Wilson
+https://chipwilson.com/
+https://thumbor.forbes.com/thumbor/fit-in/416x416/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5e7b95cd9f46de0006e492bd%2F0x0.jpg%3Fbackground%3D000000%26cropX1%3D1740%26cropX2%3D3369%26cropY1%3D1886%26cropY2%3D3515
+
+Tamara Mellon
+https://en.wikipedia.org/wiki/Tamara_Mellon
+https://www.linkedin.com/in/tamaramellon/

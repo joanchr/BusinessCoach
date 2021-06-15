@@ -1,50 +1,41 @@
 const container = document.getElementById("category-container");
 var itemsPerPage = 3;
-var categoryNames = ["Retail", "Technology", "Food Industry"];
+var categoryNames = ["Fashion", "Technology", "Food Industry"];
 var categoryPagingIndex = [0,0,0];
 var data = [
     [
-        {name:"John Doe1", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business"},
-        {name:"John Doe2", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business"},
-        {name:"John Doe3", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business"},
-        {name:"John Doe4", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business"},
-        {name:"John Doe5", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business"},
-        {name:"John Doe6", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business"},
-        {name:"John Doe7", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business"},
-        {name:"John Doe8", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business"},
-        {name:"John Doe9", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business"},
-        {name:"John Doe10", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business"},
-        {name:"John Doe11", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business"},
-        {name:"John Doe12", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business"},
+        {image:"assets/coaches/0/0.jpg",name:"Amancio Ortega", email:"Amancio.Ortega@zara.com", phone:"08-123-456-7890", rating:4, experience:"4 years in business", description:"Amancio Ortega Gaona (Spanish pronunciation: [aˈmanθjo oɾˈteɣa ɣaˈona]; born 28 March 1936) is a Spanish billionaire businessman. He is the founder and former chairman of Inditex fashion group, best known for its chain of Zara clothing and accessories shops. As of April 2021, Ortega had a net worth of $71 billion, making him the second-wealthiest person in Europe after Bernard Arnault, and the thirteen-wealthiest in the world. For a brief period of time in 2015, he was the richest man in the world, surpassing Bill Gates when his net worth peaked to $80 billion as Zara's parent company, Inditex's, stock peaked. ", companies:"Inditex (CEO)", links:"https://www.linkedin.com/in/amancio-ortega-3550121b3/"},
+        {image:"assets/coaches/0/1.jpg",name:"Delphine Arnault", email:"Delphine_Arnault@LVMH.com", phone:"08-123-456-1230", rating:5, experience:"4 years in fashion", description:"Delphine Arnault (born 4 April 1975) is a French businesswoman, director and executive vice president of Louis Vuitton (LVMH Group). Since 2003, she has been a member of the management board of the group LVMH, the first woman and youngest person to occupy that post.", companies:"LVMH Group (Vice President)", links:"https://www.linkedin.com/in/delphine-arnault-b83a243a/"},
+        {image:"assets/coaches/0/2.jpg",name:"Karl-Johan Persson", email:"Karl@hm.com", phone:"08-123-456-7390", rating:5, experience:"13 years in fashion", description:"Karl-Johan Erling Göran Persson (born 25 March 1975) is a Swedish billionaire businessman and former president and CEO of the fashion company Hennes & Mauritz (H&M), founded by his grandfather Erling Persson. As of May 2019, according to Forbes, he has a net worth of US$1.6 billion. ", companies:"Hennes & Mauritz (H&M) (CEO)", links:"https://www.linkedin.com/company/h&m/"},
+        {image:"assets/coaches/0/3.jpg",name:"Chip Wilson", email:"Chip.Wilson@lululemon.com", phone:"08-456-456-7890", rating:5, experience:"20 years in business", description:"Dennis J. Chip Wilson (born 1955) is a Canadian billionaire, businessman and philanthropist, who has founded several retail apparel companies, most notably yoga-inspired athletic apparel company Lululemon Athletica Inc (TSX: LLL, NASDAQ: LULU). Wilson is widely considered to be the creator of the athleisure trend. In 2016, he organized his personal and business interests into the holding company Hold It All Inc.", companies:"Lululemon Athletica (Founder)", links:"https://chipwilson.com/"},
+        {image:"assets/coaches/0/4.jpg",name:"Tamara Mellon", email:"Tamara.Mellon@gmail.com", phone:"08-123-123-7890", rating:5, experience:"5 years in business", description:"Tamara Mellon, OBE is best known as the Founder of Jimmy Choo. She was its Chief Creative Officer from its inception in 1996 through to its acquisition by new owners in late 2011. Jimmy Choo remains a British company and Tamara built it into one of the world's most prominent and innovative luxury brands. She was responsible for the company's creative vision and was the central figure in the business' development and strategic direction. Tamara oversaw the growth of Jimmy Choo from a single London boutique to an internationally respected brand, with over 100 stores globally, from San Francisco to Shanghai. ", companies:"Jimmy Choo (Founder)", links:"https://www.linkedin.com/in/tamaramellon/"},
+        {image:"assets/coaches/0/5.jpg",name:"John Doe6", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business", description:"", companies:"", links:""},
+        {image:"assets/coaches/0/6.jpg",name:"John Doe7", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business", description:"", companies:"", links:""},
+        {image:"assets/coaches/0/7.jpg",name:"John Doe8", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business", description:"", companies:"", links:""},
+        {image:"assets/coaches/0/8.jpg",name:"John Doe9", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business", description:"", companies:"", links:""},
     ],
     [
-        {name:"John Doe1", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business"},
-        {name:"John Doe2", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business"},
-        {name:"John Doe3", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business"},
-        {name:"John Doe4", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business"},
-        {name:"John Doe5", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business"},
-        {name:"John Doe6", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business"},
-        {name:"John Doe7", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business"},
-        {name:"John Doe8", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business"},
-        {name:"John Doe9", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business"},
-        {name:"John Doe10", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business"},
-        {name:"John Doe11", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business"},
-        {name:"John Doe12", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business"}
+        {image:"assets/coaches/1/0.jpg", name:"John Doe1", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business", description:"", companies:"", links:""},
+        {image:"assets/coaches/1/1.jpg", name:"John Doe2", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business", description:"", companies:"", links:""},
+        {image:"assets/coaches/1/2.jpg", name:"John Doe3", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business", description:"", companies:"", links:""},
+        {image:"assets/coaches/1/3.jpg", name:"John Doe4", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business", description:"", companies:"", links:""},
+        {image:"assets/coaches/1/4.jpg", name:"John Doe5", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business", description:"", companies:"", links:""},
+        {image:"assets/coaches/1/5.jpg", name:"John Doe6", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business", description:"", companies:"", links:""},
+        {image:"assets/coaches/1/6.jpg", name:"John Doe7", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business", description:"", companies:"", links:""},
+        {image:"assets/coaches/1/7.jpg", name:"John Doe8", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business", description:"", companies:"", links:""},
+        {image:"assets/coaches/1/8.jpg", name:"John Doe9", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business", description:"", companies:"", links:""},
     ],
     [
-        {name:"John Doe1", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business"},
-        {name:"John Doe2", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business"},
-        {name:"John Doe3", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business"},
-        {name:"John Doe4", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business"},
-        {name:"John Doe5", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business"},
-        {name:"John Doe6", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business"},
-        {name:"John Doe7", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business"},
-        {name:"John Doe8", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business"},
-        {name:"John Doe9", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business"},
-        {name:"John Doe10", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business"},
-        {name:"John Doe11", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business"},
-        {name:"John Doe12", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business"}
-    ]
+        {image:"assets/coaches/2/0.jpg", name:"John Doe1", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business", description:"", companies:"", links:""},
+        {image:"assets/coaches/2/1.jpg", name:"John Doe2", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business", description:"", companies:"", links:""},
+        {image:"assets/coaches/2/2.jpg", name:"John Doe3", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business", description:"", companies:"", links:""},
+        {image:"assets/coaches/2/3.jpg", name:"John Doe4", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business", description:"", companies:"", links:""},
+        {image:"assets/coaches/2/4.jpg", name:"John Doe5", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business", description:"", companies:"", links:""},
+        {image:"assets/coaches/2/5.jpg", name:"John Doe6", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business", description:"", companies:"", links:""},
+        {image:"assets/coaches/2/6.jpg", name:"John Doe7", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business", description:"", companies:"", links:""},
+        {image:"assets/coaches/2/7.jpg", name:"John Doe8", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business", description:"", companies:"", links:""},
+        {image:"assets/coaches/2/8.jpg", name:"John Doe9", email:"john.doe@gmail.com", phone:"08-123-456-7890", rating:5, experience:"4 years in business", description:"", companies:"", links:""},
+    ],
 ];
 
 var windowWidth = $(window).width();
@@ -140,6 +131,7 @@ function seed() {
                 //photo
                 var photo = document.createElement("div");
                 photo.classList.add("profile-photo-container");
+                photo.style.backgroundImage = "url("+coach.image+")";
                 card.appendChild(photo);
                 //detail
                 var cardDetail = document.createElement("div");
@@ -226,6 +218,7 @@ function next(categoryId) {
             //photo
             var photo = document.createElement("div");
             photo.classList.add("profile-photo-container");
+            photo.style.backgroundImage = "url("+coach.image+")";
             card.appendChild(photo);
             //detail
             var cardDetail = document.createElement("div");
@@ -297,6 +290,7 @@ function previous(categoryId) {
             //photo
             var photo = document.createElement("div");
             photo.classList.add("profile-photo-container");
+            photo.style.backgroundImage = "url("+coach.image+")";
             card.appendChild(photo);
             //detail
             var cardDetail = document.createElement("div");
@@ -334,4 +328,17 @@ function previous(categoryId) {
             cardContainer.appendChild(card);
         }
     }
+}
+
+
+// Modal
+const formSuccessModal = document.getElementById("coaches-modal");
+
+function openCoachesModal() {
+    document.body.style.overflowY = "hidden";
+    formSuccessModal.style.display = "flex";
+}
+function closeCoachesModal() {
+    formSuccessModal.style.display = "none";
+    document.body.style.overflowY = "scroll";
 }
