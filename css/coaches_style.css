@@ -2,6 +2,12 @@
     padding-bottom: 20vh;
 }
 
+#error-message{
+    text-align: center;
+    width: 100%;
+    display: none;
+}
+
 .search-container{
     margin: 4% 20%;
     display: flex;
@@ -152,6 +158,7 @@
     width: 90%;
     min-height: 80vh;
     top: 10vh;
+    padding-bottom: 0;
 }
 .transparent-buffer{
     height: 10vh;
@@ -200,6 +207,7 @@
     flex-direction: column;
     padding: 1%;
     max-width: 100%;
+    justify-content: center;
 }
 .coaches-detail-row-long{
     display: flex;

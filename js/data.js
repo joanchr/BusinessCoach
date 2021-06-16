@@ -1,5 +1,5 @@
-var categoryNames = ["Fashion", "Technology", "Food Industry"];
-var data = [
+const allCategoryNames = ["Fashion", "Technology", "Food Industry"];
+const allData = [
     [
         {id:0,image:"assets/coaches/0/0.jpg",name:"Amancio Ortega", email:"Amancio.Ortega@zara.com", phone:"08-123-456-7890", rating:4.0, experience:"4 years in fashion", description:"Amancio Ortega Gaona (Spanish pronunciation: [aˈmanθjo oɾˈteɣa ɣaˈona]; born 28 March 1936) is a Spanish billionaire businessman. He is the founder and former chairman of Inditex fashion group, best known for its chain of Zara clothing and accessories shops. As of April 2021, Ortega had a net worth of $71 billion, making him the second-wealthiest person in Europe after Bernard Arnault, and the thirteen-wealthiest in the world. For a brief period of time in 2015, he was the richest man in the world, surpassing Bill Gates when his net worth peaked to $80 billion as Zara's parent company, Inditex's, stock peaked. ", companies:"Inditex (CEO)", links:"https://www.linkedin.com/in/amancio-ortega-3550121b3/"},
         {id:1,image:"assets/coaches/0/1.jpg",name:"Delphine Arnault", email:"Delphine_Arnault@LVMH.com", phone:"08-123-456-1230", rating:5.0, experience:"4 years in fashion", description:"Delphine Arnault (born 4 April 1975) is a French businesswoman, director and executive vice president of Louis Vuitton (LVMH Group). Since 2003, she has been a member of the management board of the group LVMH, the first woman and youngest person to occupy that post.", companies:"LVMH Group (Vice President)", links:"https://www.linkedin.com/in/delphine-arnault-b83a243a/"},
@@ -28,3 +28,6 @@ var data = [
         {id:5,image:"assets/coaches/2/5.jpg", name:"Dana Bloom", email:"dana.bloom@gmail.com", phone:"08-987-456-7890", rating:4.2, experience:"7 years in food industry", description:"Dana and Howard Bloom are the cofounders of Proper Food, a high-quality grab-and-go food company launched in 2013, which currently has 12 locations between San Francisco and NYC. Proper Food aims to eliminate the dilemma between eating well and eating fast. All items are prepared from scratch each morning by a team led by Chef Munoz, who hails from a Michelin-starred kitchen. The food consists of locally-sourced ingredients such as wild fresh octopus, kale, steaks, burritos, fresh juices, and more.", companies:"Proper Food (Co-Founder and CEO)", links:"https://www.linkedin.com/in/dana-bloom-390113/"}
     ],
 ];
+
+var categoryNames = allCategoryNames;
+var data = allData;

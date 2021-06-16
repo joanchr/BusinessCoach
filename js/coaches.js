@@ -6,6 +6,8 @@ const fullStar = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://ww
 const halfStar = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 20 20"><path d="M10 1L7 7l-6 .75l4.13 4.62L4 19l6-3l6 3l-1.12-6.63L19 7.75L13 7zm0 2.24l2.34 4.69l4.65.58l-3.18 3.56l.87 5.15L10 14.88V3.24z" fill="#000000"/></svg>'
 const emptyStar = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 20 20"><path d="M10 1L7 7l-6 .75l4.13 4.62L4 19l6-3l6 3l-1.12-6.63L19 7.75L13 7zm0 2.24l2.34 4.69l4.65.58l-3.18 3.56l.87 5.15L10 14.88l-4.68 2.34l.87-5.15l-3.18-3.56l4.65-.58z" fill="#000000"/></svg>' 
 
+const queryParams = new URLSearchParams(window.location.search);
+
 var windowWidth = $(window).width();
 if(windowWidth < 633){
     itemsPerPage = 1;
@@ -58,7 +60,49 @@ $(window).on('resize', function(event){
     }
 });
 
+
+// searching
+function search() {
+    document.getElementById("error-message").style.display = "none";
+    var keyword = queryParams.get("search-coach");
+    if(keyword == null) 
+        return;
+
+    window.data = [[]]; 
+    window.categoryNames = [];
+    var dataI = 0;
+    var dataJ = 0;
+    var flag = false;
+    var empty = true;
+    for (let i = 0; i < allData.length; i++) {
+        const category = allCategoryNames[i];
+        if(flag == true){
+            window.data.push([])
+            dataI++;
+        }
+        flag = false;
+        for (let j = 0; j < allData[i].length; j++) {
+            const coach = allData[i][j];
+            if(category.includes(keyword) || coach.name.includes(keyword)){
+                window.data[dataI].push(allData[i][j]);
+                dataJ++;
+                flag = true;
+                empty = false
+            }
+        }
+        if(flag == true){
+            window.categoryNames.push(allCategoryNames[i]);
+        }
+    }
+    
+    if(empty){
+        document.getElementById("error-message").style.display = "block";
+    }
+}
+
+
 function seed() {
+    search();
     container.innerHTML = '';
     for (let i = 0; i < categoryNames.length; i++) {
         var categoryName = categoryNames[i];
