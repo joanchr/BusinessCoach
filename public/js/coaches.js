@@ -360,6 +360,7 @@ function previous(categoryId) {
 
 // Modal
 const formSuccessModal = document.getElementById("coaches-modal");
+formSuccessModal.style.display = "flex";
 $('#coaches-modal').hide()
 
 function openCoachesModal(coach, categoryId, coachId) {
