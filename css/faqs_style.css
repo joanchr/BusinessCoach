@@ -9,6 +9,9 @@
     font-size: large;
     text-align: center;
 }
+#error-message{
+    display: none;
+}
 
 .title{
     margin: 1vh;
@@ -40,6 +43,12 @@
     cursor: pointer;
 }
 
+#faqs-container-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 40vh;
+}
 .faqs-container{
     margin: 2vh 0;
 }

@@ -83,7 +83,7 @@ function search() {
         flag = false;
         for (let j = 0; j < allData[i].length; j++) {
             const coach = allData[i][j];
-            if(category.includes(keyword) || coach.name.includes(keyword)){
+            if(category.toLowerCase().includes(keyword.toLowerCase()) || coach.name.toLowerCase().includes(keyword.toLowerCase())){
                 window.data[dataI].push(allData[i][j]);
                 dataJ++;
                 flag = true;
