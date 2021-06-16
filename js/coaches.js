@@ -198,6 +198,12 @@ function seed() {
         //append card container container
         container.appendChild(cardContainerContainer);
     }
+
+    // animate
+    container.childNodes.forEach(element => {
+        $(element).hide(0)
+        $(element).fadeIn(400)
+    });
 }
 
 function next(categoryId) {
@@ -268,8 +274,12 @@ function next(categoryId) {
             cardContainer.appendChild(card);
         }
     }
+    
+    cardContainer.childNodes.forEach(element => {
+        $(element).hide(0)
+        $(element).fadeIn(400)
+    });
 }
-
 
 function previous(categoryId) {
     //calculate total page
@@ -340,6 +350,11 @@ function previous(categoryId) {
             cardContainer.appendChild(card);
         }
     }
+
+    cardContainer.childNodes.forEach(element => {
+        $(element).hide(0)
+        $(element).fadeIn(400)
+    });
 }
 
 
