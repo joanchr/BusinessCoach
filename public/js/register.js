@@ -120,6 +120,62 @@ function validateEmail() {
         return flag;
     }
 
+    // Email validation
+    var lastAtIndex = -1;
+    var atCount = 0;
+    var lastDotIndex = -1;
+    var dotCount = 0;
+    for (let i = 0; i < email.length; i++) {
+        var c = email.charAt(i);
+        if(c == '@'){
+            lastAtIndex = i;
+            atCount++;
+        }
+        if(c == '.'){
+            lastDotIndex = i;
+            dotCount++;
+        }
+    }
+    // contains exactly 1 @
+    if(atCount != 1){
+        emailErrorMsg.innerText = "Email must be in the correct format (e.g. john@example.com). "
+        flag = false;
+        return flag;
+    }
+    // contains minimum 1 .
+    if(dotCount < 1){
+        emailErrorMsg.innerText = "Email must be in the correct format (e.g. john@example.com). "
+        flag = false;
+        return flag;
+    }
+
+    // @ must not be first character
+    if(lastAtIndex == 0){
+        emailErrorMsg.innerText = "Email must be in the correct format (e.g. john@example.com). The '@' character must not be the first character."
+        flag = false;
+        return flag;
+    }
+    // . must not be last character
+    if(lastDotIndex == email.length-1){
+        emailErrorMsg.innerText = "Email must be in the correct format (e.g. john@example.com). The '.' character must not be the last character."
+        flag = false;
+        return flag;
+    }
+
+    // cannot contain @ after .
+    if(lastAtIndex > lastDotIndex){
+        emailErrorMsg.innerText = "Email must be in the correct format (e.g. john@example.com). The '@' character cannot be behind '.' character."
+        flag = false;
+        return flag;
+    }
+
+    // . cannot be directly behind @
+    if(email.charAt(lastAtIndex+1) == '.'){
+        emailErrorMsg.innerText = "Email must be in the correct format (e.g. john@example.com). The '.' character cannot be directly behind '@' character."
+        flag = false;
+        return flag;
+    }
+
     return flag;
 }
 
@@ -158,6 +214,15 @@ function validateBirthdate() {
     var birthdate = document.getElementById("birthdate").value;
     if (birthdate.length == 0) {
         birthdateErrorMsg.innerText = "Birthdate must be filled. "
+        flag = false;
+        return flag;
+    }
+
+    var yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 1)
+    var birthdate2 = new Date(birthdate)
+    if(birthdate2 >= yesterday){
+        birthdateErrorMsg.innerText = "Birthdate must be in the past. "
         flag = false;
         return flag;
     }
